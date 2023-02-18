@@ -8,23 +8,25 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('April Mart'),
-          centerTitle: true,
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Center(
-              child: Image.asset(
-                'assets/april.png',
-                width: 200,
-              ),
+      appBar: AppBar(
+        title: Text('April Mart'),
+        centerTitle: true,
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Center(
+            child: Image.asset(
+              'assets/april.png',
+              width: 200,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Card(
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              InkWell(
+                onTap: () => Get.toNamed('/transaksi'),
+                child: Card(
                   elevation: 20,
                   child: Padding(
                     padding: EdgeInsets.all(45.0),
@@ -42,7 +44,10 @@ class HomeView extends GetView<HomeController> {
                     ),
                   ),
                 ),
-                Card(
+              ),
+              InkWell(
+                onTap: () => Get.toNamed('/finansial'),
+                child: Card(
                   elevation: 20,
                   child: Padding(
                     padding: EdgeInsets.all(45.0),
@@ -60,12 +65,15 @@ class HomeView extends GetView<HomeController> {
                     ),
                   ),
                 ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Card(
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              InkWell(
+                onTap: () => Get.toNamed('/stock'),
+                child: Card(
                   elevation: 20,
                   child: Padding(
                     padding: EdgeInsets.all(45.0),
@@ -83,7 +91,10 @@ class HomeView extends GetView<HomeController> {
                     ),
                   ),
                 ),
-                Card(
+              ),
+              InkWell(
+                onTap: () => Get.toNamed('/laporan'),
+                child: Card(
                   elevation: 20,
                   child: Padding(
                     padding: EdgeInsets.all(45.0),
@@ -101,9 +112,11 @@ class HomeView extends GetView<HomeController> {
                     ),
                   ),
                 ),
-              ],
-            )
-          ],
-        ));
+              ),
+            ],
+          )
+        ],
+      ),
+    );
   }
 }

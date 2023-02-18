@@ -10,6 +10,9 @@ dependencies:
   get: 4.6.5
   flutter:
     sdk: flutter
+  sqflite: ^2.2.4+1
+  path_provider: ^2.0.12
+  drift: ^2.4.2
 
 dev_dependencies:
   flutter_lints: ^2.0.0

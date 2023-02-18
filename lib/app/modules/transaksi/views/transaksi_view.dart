@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../controllers/transaksi_controller.dart';
+import 'produk_view.dart';
 
 class TransaksiView extends GetView<TransaksiController> {
   @override
@@ -14,9 +15,14 @@ class TransaksiView extends GetView<TransaksiController> {
       ),
       body: Center(
         child: Text(
-          'TransaksiView is working',
+          'ProdukView is working',
           style: TextStyle(fontSize: 20),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (() => Get.to(() => ProdukView())),
+        backgroundColor: Colors.blue,
+        child: const Icon(Icons.add),
       ),
     );
   }
